@@ -1,0 +1,335 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome file</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h3 id="modes">Modes</h3>
+
+<table>
+<thead>
+<tr>
+<th align="center">Member Constant</th>
+<th align="center">Stands For</th>
+<th align="center">Access</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">in *</td>
+<td align="center">input</td>
+<td align="center">File open for reading: the internal stream buffer supports input operations.</td>
+</tr>
+<tr>
+<td align="center">out</td>
+<td align="center">output</td>
+<td align="center">File open for writing: the internal stream buffer supports output operations.</td>
+</tr>
+<tr>
+<td align="center">binary</td>
+<td align="center">binary</td>
+<td align="center">Operations are performed in binary mode rather than text.</td>
+</tr>
+<tr>
+<td align="center">ate</td>
+<td align="center">at end</td>
+<td align="center">The output position starts at the end of the file.</td>
+</tr>
+<tr>
+<td align="center">app</td>
+<td align="center">append</td>
+<td align="center">All output operations happen at the end of the file, appending to its existing contents.</td>
+</tr>
+<tr>
+<td align="center">trunc</td>
+<td align="center">truncate</td>
+<td align="center">Any contents that existed in the file before it is open are discarded.</td>
+</tr>
+</tbody>
+</table><h3 id="default-open-modes">Default Open Modes</h3>
+
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">ifstream</td>
+<td align="center">ios::in</td>
+</tr>
+<tr>
+<td align="center">ofstream</td>
+<td align="center">ios::out</td>
+</tr>
+<tr>
+<td align="center">fstream</td>
+<td align="center">ios::in</td>
+</tr>
+</tbody>
+</table><hr>
+<h3 id="syntax-for-some-functions-in-fstream-class">Syntax for some functions in fstream class</h3>
+<pre class=" language-cpp"><code class="prism  language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fstream&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+  fstream file<span class="token punctuation">;</span>
+  file<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// built in function in fstream class to open a file</span>
+  <span class="token comment">// syntax: file.open(path, file name, extension, open mode)</span>
+
+  file<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// built in function in fstream class to close a file</span>
+  <span class="token comment">// syntax: file.close();</span>
+
+  file<span class="token punctuation">.</span><span class="token function">is_open</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// built in function in fstream class to check if a file is open or not</span>
+  <span class="token comment">// syntax: file.is_open();</span>
+
+  file<span class="token punctuation">.</span><span class="token function">eof</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// built in function in fstream class to check if the end of file is reached or not</span>
+  <span class="token comment">// syntax: file.eof();</span>
+
+  file<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// built in function in fstream class to write in a file</span>
+  <span class="token comment">// syntax: file.write((char*)&amp;s, sizeof(s));</span>
+
+  file<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// built in function in fstream class to read from a file</span>
+  <span class="token comment">// syntax: file.read((char*)&amp;s, sizeof(s));</span>
+
+  file<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// built in function in fstream class to put a character in a file</span>
+  <span class="token comment">// syntax: file.put(ch);</span>
+
+  file<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// built in function in fstream class to get a character from a file</span>
+  <span class="token comment">// syntax: file.get(ch);</span>
+
+  file<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>ch<span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// built in function in fstream class to get a string from a file</span>
+  <span class="token comment">// syntax: file.get(ch, size);</span>
+
+  file<span class="token punctuation">.</span><span class="token function">putline</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// built in function in fstream class to put a string in a file</span>
+  <span class="token comment">// syntax: file.putline(ch);</span>
+
+  file<span class="token punctuation">.</span><span class="token function">getline</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// built in function in fstream class to get a string from a file</span>
+  <span class="token comment">// syntax: file.getline(ch, size);</span>
+
+    
+  <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>  
+</code></pre>
+<hr>
+<h3 id="syntax-to-read-the-file">syntax to read the file</h3>
+<pre class=" language-cpp"><code class="prism  language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fstream&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token comment">// the class student</span>
+<span class="token keyword">class</span> <span class="token class-name">student</span><span class="token punctuation">{</span>
+  <span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> age<span class="token punctuation">,</span> id<span class="token punctuation">;</span>
+    string name<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+  fstream file<span class="token punctuation">;</span>
+  file<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">"Test.txt"</span><span class="token punctuation">,</span> ios<span class="token operator">::</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// syntax to read the file</span>
+  
+  <span class="token comment">// the variable to store the student</span>
+  student s<span class="token punctuation">;</span>
+
+  file <span class="token operator">&gt;&gt;</span> s<span class="token punctuation">.</span>name <span class="token operator">&gt;&gt;</span> s<span class="token punctuation">.</span>age <span class="token operator">&gt;&gt;</span> s<span class="token punctuation">.</span>id<span class="token punctuation">;</span> <span class="token comment">// read the student from the file</span>
+
+  cout <span class="token operator">&lt;&lt;</span> s<span class="token punctuation">.</span>name <span class="token operator">&lt;&lt;</span> <span class="token string">" "</span> <span class="token operator">&lt;&lt;</span> s<span class="token punctuation">.</span>age <span class="token operator">&lt;&lt;</span> <span class="token string">" "</span> <span class="token operator">&lt;&lt;</span> s<span class="token punctuation">.</span>id <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span> <span class="token comment">// print the student</span>
+
+  <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>  
+</code></pre>
+<hr>
+<h3 id="syntax-to-write-in-the-file">syntax to write in the file</h3>
+<pre class=" language-cpp"><code class="prism  language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fstream&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token comment">// the class student</span>
+<span class="token keyword">class</span> <span class="token class-name">student</span><span class="token punctuation">{</span>
+  <span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> age<span class="token punctuation">,</span> id<span class="token punctuation">;</span>
+    string name<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+  fstream file<span class="token punctuation">;</span>
+  file<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">"Test.txt"</span><span class="token punctuation">,</span> ios<span class="token operator">::</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// syntax to write the student in the file</span>
+
+  <span class="token comment">// the variable to store the student</span>
+  student s <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"Gerges"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+  
+  file <span class="token operator">&lt;&lt;</span> s<span class="token punctuation">.</span>name <span class="token operator">&lt;&lt;</span> <span class="token string">" "</span> <span class="token operator">&lt;&lt;</span> s<span class="token punctuation">.</span>age <span class="token operator">&lt;&lt;</span> <span class="token string">" "</span> <span class="token operator">&lt;&lt;</span> s<span class="token punctuation">.</span>id <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span> <span class="token comment">// write the student in the file</span>
+
+
+  <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>  
+</code></pre>
+<hr>
+<h2 id="simple-project-using-file-structure"><a href="https://github.com/GergesHany/File-structure/tree/main/file%20structure%20using%20c%2B%2B/student_project">simple project using file structure</a></h2>
+<h3 id="the-functions-in-the-project-is">The functions in the project is</h3>
+<ul>
+<li><code>Write student</code></li>
+<li><code>Read student</code></li>
+<li><code>Search student</code></li>
+<li><code>Delete student</code></li>
+<li><code>Update student</code></li>
+</ul>
+<hr>
+<h2 id="seekg-and-seekp-functions">seekg and seekp functions</h2>
+<pre class=" language-cpp"><code class="prism  language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fstream&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+  fstream file<span class="token punctuation">;</span>
+  file<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">"Test.txt"</span><span class="token punctuation">,</span> ios<span class="token operator">::</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// syntax of the seekg function</span>
+  <span class="token comment">// file.seekg(number of characters, position);</span>
+
+
+  file<span class="token punctuation">.</span><span class="token function">seekg</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> ios<span class="token operator">::</span>end<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// go to the end of the file to get the size of the file </span>
+  <span class="token comment">// the size of the file is the number of characters in the file </span>
+
+  <span class="token keyword">int</span> size <span class="token operator">=</span> file<span class="token punctuation">.</span><span class="token function">tellg</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// get the size of the file</span>
+  <span class="token comment">// the tellg function returns the current position in the file</span>
+  <span class="token comment">// the current position is the number of characters from the beginning of the file</span>
+
+
+  file<span class="token punctuation">.</span><span class="token function">seekg</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> ios<span class="token operator">::</span>beg<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// go to the beginning of the file to read the file from the beginning</span>
+  
+  <span class="token comment">// the seekg function takes two parameters</span>
+  <span class="token comment">// the first parameter is the number of characters to go from the beginning of the file</span>
+  <span class="token comment">// the second parameter is the position to start from</span>
+  <span class="token comment">// the position can be ios::beg, ios::cur, ios::end</span>
+  <span class="token comment">// ios::beg is the beginning of the file</span>
+  <span class="token comment">// ios::cur is the current position in the file</span>
+  <span class="token comment">// ios::end is the end of the file</span>
+
+  file<span class="token punctuation">.</span><span class="token function">seekg</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> ios<span class="token operator">::</span>beg<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// go to the 5th character from the beginning of the file</span>
+
+
+  <span class="token comment">// syntax of the seekp function</span>
+  <span class="token comment">// file.seekp(number of characters, position);</span>
+  
+  file<span class="token punctuation">.</span><span class="token function">seekp</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> ios<span class="token operator">::</span>end<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// go to the end of the file to write in the file</span>
+  file <span class="token operator">&lt;&lt;</span> <span class="token string">"Hello world"</span><span class="token punctuation">;</span> <span class="token comment">// write in the file</span>
+
+  file<span class="token punctuation">.</span><span class="token function">seekp</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> ios<span class="token operator">::</span>beg<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// go to the beginning of the file to write in the file</span>
+  file <span class="token operator">&lt;&lt;</span> <span class="token string">"Hello world"</span><span class="token punctuation">;</span> <span class="token comment">// write in the file</span>
+
+  file<span class="token punctuation">.</span><span class="token function">seekp</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> ios<span class="token operator">::</span>beg<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// go to the 5th character from the beginning of the file to write in the file</span>
+  file <span class="token operator">&lt;&lt;</span> <span class="token string">"Hello world"</span><span class="token punctuation">;</span> <span class="token comment">// write in the file</span>
+
+  file<span class="token punctuation">.</span><span class="token function">seekp</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> ios<span class="token operator">::</span>cur<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// go to the 5th character from the current position to write in the file</span>
+
+  file<span class="token punctuation">.</span><span class="token function">seekp</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">5</span><span class="token punctuation">,</span> ios<span class="token operator">::</span>cur<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// go to the 5th character before the current position to write in the file</span>
+
+  file<span class="token punctuation">.</span><span class="token function">seekp</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">5</span><span class="token punctuation">,</span> ios<span class="token operator">::</span>end<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// go to the 5th character before the end of the file to write in the file</span>
+
+  file<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>  
+</code></pre>
+<hr>
+<h2 id="file-flags">file flags</h2>
+<pre class=" language-cpp"><code class="prism  language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fstream&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+  fstream <span class="token function">file</span><span class="token punctuation">(</span><span class="token string">"Students.txt"</span><span class="token punctuation">,</span> ios<span class="token operator">::</span>in <span class="token operator">|</span> ios<span class="token operator">::</span>out <span class="token operator">|</span> ios<span class="token operator">::</span>binary<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// file flags</span>
+
+
+  <span class="token comment">// 1 - file.is_open() -&gt; check if the file is open</span>
+  <span class="token comment">// syntax: file.is_open()</span>
+  <span class="token comment">// return: true if the file is open, false if the file is not open</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>file<span class="token punctuation">.</span><span class="token function">is_open</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"The file is open"</span> <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"The file is not open"</span> <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 2 - file.eof() -&gt; check if the file is at the end</span>
+  <span class="token comment">// syntax: file.eof()</span>
+  <span class="token comment">// return: true if the file is at the end, false if the file is not at the end</span>
+
+
+  <span class="token keyword">if</span><span class="token punctuation">(</span>file<span class="token punctuation">.</span><span class="token function">eof</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"The file is at the end"</span> <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"The file is not at the end"</span> <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token comment">// 3 - file.fail() -&gt; check if the file is failed</span>
+  <span class="token comment">// syntax: file.fail()</span>
+  <span class="token comment">// return: true if the file is failed, false if the file is not failed</span>
+  <span class="token comment">// the file is failed if the file is failed to read or write from the file or (the user enter a wrong data)</span>
+
+
+  <span class="token keyword">if</span><span class="token punctuation">(</span>file<span class="token punctuation">.</span><span class="token function">fail</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"The file is failed"</span> <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"The file is not failed"</span> <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+
+  <span class="token comment">// 4 - file.bad() -&gt; check if the file is bad</span>
+  <span class="token comment">// syntax: file.bad()</span>
+  <span class="token comment">// return: true if the file is bad, false if the file is not bad</span>
+  <span class="token comment">// the file is bad if the file is failed to can read or write from the file</span>
+
+  <span class="token keyword">if</span><span class="token punctuation">(</span>file<span class="token punctuation">.</span><span class="token function">bad</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"The file is bad"</span> <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"The file is not bad"</span> <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+
+  <span class="token comment">// 5 - file.good() -&gt; check if the file is good</span>
+  <span class="token comment">// syntax: file.good()</span>
+  <span class="token comment">// return: true if the file is good, false if the file is not good</span>
+  <span class="token comment">// the file is good if the file (is not failed and not bad and not at the end)</span>
+
+  <span class="token keyword">if</span><span class="token punctuation">(</span>file<span class="token punctuation">.</span><span class="token function">good</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"The file is good"</span> <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"The file is not good"</span> <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 6 - file.clear() -&gt; clear the file flags and set the file to good</span>
+  <span class="token comment">// syntax: file.clear()</span>
+  <span class="token comment">// return: void</span>
+
+  file<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  
+  <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>  
+</code></pre>
+</div>
+</body>
+
+</html>
