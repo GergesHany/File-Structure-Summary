@@ -23,6 +23,12 @@ th{
     color: #2374b2;
 }
 
+video {
+    width: 800px;
+    height: auto;
+    max-width: 100%;
+}
+
 .header {
     background-color: white;
     color: #58a3dc;
