@@ -1,43 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <ul>
+      <li>2 platter = 1 surfase</li>
+      <li>{x} capasity = bytes per {x}</li>
+      <li>cylinder = tracks per surfase</li>
+      <li>{x} / {y} = {x} / {z} * {z} / {y}</li>
+      <li>Number of Cylinders = number of tracks in a surface</li>
+      <li>Tracks capacity = sectors per track * bytes per sector</li>
+      <li>Drive Capacity = number of cylinders * cylinder capacity</li>
+      <li>
+        number of sectors per cylinder = tracks per surfase * sectors per track
+      </li>
+      <li>
+        number of tracks per disk = number of surfases * number of tracks per
+        surfase
+      </li>
+    </ul>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Problem Solving</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://stackedit.io/style.css" />
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
 
-        }
+      #video-container {
+        text-align: center;
+      }
 
-        #video-container {
-            text-align: center;
-        }
+      h1 {
+        font-size: 32px;
+      }
 
-        h1 {
-            font-size: 32px;
-        }
-
-        video {
-            width: 800px;
-            height: auto;
-            max-width: 100%;
-        }
+      video {
+        width: 800px;
+        height: auto;
+        max-width: 100%;
+      }
     </style>
-</head>
-<body class="stackedit">
+  </head>
+  <body class="stackedit">
     <div id="video-container">
-        <h1>Toqaa's Video</h1>
-        <video src="vids/Toqaa.mp4" controls></video>
+      <h1>Toqaa's Video</h1>
+      <video src="vids/Toqaa.mp4" controls></video>
 
-        <br><br><br><br>
+      <br /><br /><br /><br />
 
-        <h1>Mina's Video</h1>
-        <video src="vids/Mina.mp4" controls></video>
+      <h1>Mina's Video</h1>
+      <video src="vids/Mina.mp4" controls></video>
     </div>
-</body>
+  </body>
 </html>
